@@ -1,51 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios'
-import {BrowserRouter as Router} from 'react-router-dom';
-import { Route, Switch } from "react-router";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/home';
 import Login from './components/login';
 import Signup from './components/signup';
+import Search from './components/search';
+import Favorites from './components/fav';
+import Saved from './components/saved';
+import Completed from './components/completed';
 
 function App() {
-  // const [getMessage, setGetMessage] = useState({})
-
-  // useEffect(()=>{
-  //   axios.get('http://localhost:5000/flask/hello').then(response => {
-  //     console.log("SUCCESS", response)
-  //     setGetMessage(response)
-  //   }).catch(error => {
-  //     console.log(error)
-  //   })
-
-  // }, [])
   return (
     <div className="App">
-      {/*<header className="App-header">
-         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <div>{getMessage.status === 200 ? 
-          <h3>{getMessage.data.message}</h3>
-          :
-          <h3>LOADING</h3>}
-        </div> 
-      </header>*/}
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/favs" component={Favorites} />
+          <Route exact path="/saved" component={Saved} />
+          <Route exact path="/completed" component={Completed} />
         </Switch>
       </Router>
     </div>
